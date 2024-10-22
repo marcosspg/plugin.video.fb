@@ -5,7 +5,7 @@ var added = []
 document.querySelectorAll("div[class='b-c'] a").forEach(
     (link)=>{
         if (link.href.includes("acestream://") && !link.innerHTML.includes("<") && !added.includes(link.innerHTML)) {
-            lndata+= multiBTOA(link.innerHTML)+"|"+multiBTOA(link.href)+"\n"
+            lndata+= multiBTOA(link.innerHTML)+"|"+multiBTOA(link.href.replace("acestream://", ""))+"\n"
             added.push(link.innerHTML)
         }
     }
